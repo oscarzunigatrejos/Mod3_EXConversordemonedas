@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXAMEN Mod 3 Conversor de Monedas</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <button id="theme" class="navbar-item">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24" class="icon icon-tabler icons-tabler-filled icon-tabler-moon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 1.992a10 10 0 1 0 9.236 13.838c.341 -.82 -.476 -1.644 -1.298 -1.31a6.5 6.5 0 0 1 -6.864 -10.787l.077 -.08c.551 -.63 .113 -1.653 -.758 -1.653h-.266l-.068 -.006l-.06 -.002z" /></svg>
+      </button>
+      <h1 class="is-size-1">Conversor de Monedas Nacional</h1>
+      <div class="notification is-primary">
+        <div class="columns">
+          <div class="column">
+            <div class="field">
+              <label class="label is-size-3">Monto CLP:</label>
+              <div class="control">
+                <input class="input is-large" type="number" id="monto" placeholder="Ingrese el monto en CLP" 
+                onkeypress="return onlyNumberKey(event)" pattern="\d*" >
+              </div>
+              <span id="error" class="has-text-danger"></span>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label class="label is-size-3">Moneda a convertir:</label>
+              <div class="control">
+                <div class="select is-large">
+                  <select id="indicadores">
+                    <option value="dolar">Dolar</option>
+                    <option value="euro">Euro</option>
+                    <option value="utm">UTM</option>
+                    <option value="uf">UF</option>
+                    <option value="bitcoin">Bitcoin</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      
+          <div class="field">
+            <div class="control">
+              <button id="btnCalcular" class="button is-link is-fullwidth">Calcular</button>
+            </div>
+            <span id="errorTry" class="has-text-danger"></span>
+          </div>
+
+
+        <div class="field">
+          <span id="resultado"></span>
+          <div class="container">
+            <canvas id="myChart"  class="grafica" width="578" height="289"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/theme.js"></script>
+</body>
+
+</html>
